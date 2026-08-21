@@ -141,13 +141,25 @@ body {
   z-index: 1;
 }
 
-/* Fix width expansion to prevent squeezing next to sidebar */
+/* Force runtime container to take up the rest of the screen */
 .theme-entry.psf .runtime-content.with-sidebar {
   margin-left: 300px !important;
   width: calc(100vw - 300px) !important;
   max-width: calc(100vw - 300px) !important;
   box-sizing: border-box !important;
   overflow-x: hidden !important;
+}
+
+/* Force K2 form panels, layout tables, and views to expand to full width */
+.theme-entry.psf .runtime-content.with-sidebar .form,
+.theme-entry.psf .runtime-content.with-sidebar #pgInnerPanel,
+.theme-entry.psf .runtime-content.with-sidebar .form-container,
+.theme-entry.psf .runtime-content.with-sidebar table.layout,
+.theme-entry.psf .runtime-content.with-sidebar .view,
+.theme-entry.psf .runtime-content.with-sidebar .view-canvas {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .theme-entry.psf .runtime-content.with-sidebar .form,
