@@ -19,20 +19,6 @@
     }
   };
 
-  var state = {
-    initialized: false,
-    mobileHeaderBound: false,
-    headerResizeBound: false,
-    tabFlowBound: false,
-    footerResizeBound: false,
-    footerTabBound: false,
-    lastWorklistMenuAnchor: null,
-    worklistMenuActive: false,
-    worklistMenuBound: false,
-    worklistObserverBound: false,
-    worklistRefreshScheduled: false
-  };
-
   var css = String.raw`
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
@@ -155,10 +141,20 @@ body {
   z-index: 1;
 }
 
+/* Fix width expansion to prevent squeezing next to sidebar */
 .theme-entry.psf .runtime-content.with-sidebar {
-  justify-content: start;
-  margin-left: var(--ntx-sidebar-width) !important;
-  width: calc(100% - var(--ntx-sidebar-width)) !important;
+  margin-left: 300px !important;
+  width: calc(100vw - 300px) !important;
+  max-width: calc(100vw - 300px) !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+.theme-entry.psf .runtime-content.with-sidebar .form,
+.theme-entry.psf .runtime-content.with-sidebar #pgInnerPanel,
+.theme-entry.psf .runtime-content.with-sidebar .panel {
+  width: 100% !important;
+  max-width: 100% !important;
   box-sizing: border-box !important;
 }
 
@@ -278,33 +274,6 @@ body {
   border-color: currentColor;
 }
 
-.theme-entry.psf .psf-sidebar-toggle {
-  align-items: center;
-  background: var(--ntx-white);
-  border: 1px solid var(--ntx-soft-line);
-  box-shadow: var(--ntx-shadow);
-  color: var(--ntx-deep-navy);
-  cursor: pointer;
-  display: none;
-  height: 48px;
-  justify-content: center;
-  left: 14px;
-  position: fixed;
-  top: 14px;
-  width: 48px;
-  z-index: 10002;
-}
-
-.theme-entry.psf .psf-sidebar-toggle::before {
-  content: "menu";
-  font-family: "Material Symbols Outlined";
-  font-size: 28px;
-}
-
-.theme-entry.psf.psf-sidebar-open .psf-sidebar-toggle::before {
-  content: "close";
-}
-
 .theme-entry.psf .view.header {
   background: transparent !important;
   height: 148px !important;
@@ -349,7 +318,6 @@ body {
       runtimeContent.classList.add("with-sidebar");
     }
 
-    // Build sidebar if tabs exist and sidebar isn't already created
     var tabBox = document.querySelector(".form-tabs");
     var existingSidebar = document.querySelector(".psf-sidebar");
     if (tabBox && !existingSidebar) {
@@ -359,7 +327,7 @@ body {
       var logoDiv = document.createElement("div");
       logoDiv.className = "psf-sidebar-logo";
       var logoImg = document.createElement("img");
-      logoImg.src = "https://maxiezzahi.github.io/k2-modern-style/logo.png"; // Fallback or adjust as needed
+      logoImg.src = "https://maxiezzahi.github.io/k2-modern-style/logo.png";
       logoImg.alt = "Logo";
       logoDiv.appendChild(logoImg);
       sidebar.appendChild(logoDiv);
