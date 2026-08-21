@@ -1,7 +1,6 @@
 /*!
  * Nintex PSF K2 Single File Theme (No Waves Edition)
  * Adapted from lowcodelegend/PSFUX-Square for modern Nintex styling.
- * Reference this one JavaScript file from the K2 style profile/header view.
  */
 (function (window, document) {
   "use strict";
@@ -252,25 +251,6 @@ body {
   z-index: 2;
 }
 
-.theme-entry.psf .psf-tab-flow {
-  height: 100vh;
-  inset: 0;
-  overflow: visible;
-  pointer-events: none;
-  position: fixed;
-  width: 100vw;
-  z-index: 10001;
-}
-
-.theme-entry.psf .psf-tab-flow path {
-  fill: var(--ntx-white);
-  shape-rendering: geometricPrecision;
-  stroke: rgba(255, 255, 255, 0.98);
-  stroke-linejoin: round;
-  stroke-width: 1.5;
-  vector-effect: non-scaling-stroke;
-}
-
 .theme-entry.psf .psf-sidebar .tab-wrapper {
   align-items: center;
   border: 0 !important;
@@ -296,18 +276,6 @@ body {
   border-color: currentColor;
 }
 
-.theme-entry.psf .psf-sidebar .tab-box-tabs > li:nth-child(2) > a.tab.selected .tab-wrapper::before {
-  background: radial-gradient(circle at center, var(--ntx-purple) 0 4px, transparent 4.5px);
-}
-
-.theme-entry.psf .psf-sidebar .tab-box-tabs > li:nth-child(3) > a.tab.selected .tab-wrapper::before {
-  background: radial-gradient(circle at center, var(--ntx-blue) 0 4px, transparent 4.5px);
-}
-
-.theme-entry.psf .psf-sidebar .tab-text {
-  min-width: 0 !important;
-}
-
 .theme-entry.psf .psf-sidebar-toggle {
   align-items: center;
   background: var(--ntx-white);
@@ -329,7 +297,6 @@ body {
   content: "menu";
   font-family: "Material Symbols Outlined";
   font-size: 28px;
-  font-variation-settings: "FILL" 0, "wght" 600, "GRAD" 0, "opsz" 24;
 }
 
 .theme-entry.psf.psf-sidebar-open .psf-sidebar-toggle::before {
@@ -342,38 +309,9 @@ body {
   margin-bottom: 4px;
   margin-top: 0;
   max-height: 148px !important;
-  min-height: 0 !important;
-  overflow: visible !important;
 }
 
-.theme-entry.psf .header * {
-  background-color: transparent !important;
-}
-
-.theme-entry.psf .header span[name="LogoCell"],
-.theme-entry.psf .header .psf-header-logo-source {
-  display: none !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper {
-  background: transparent !important;
-  box-shadow: none !important;
-  color: var(--normal-text-color);
-  padding: 8px 10px 6px !important;
-}
-
-.theme-entry.psf .header .panel-body-m,
-.theme-entry.psf .header .panel-body-wrapper,
-.theme-entry.psf .header .innerpanel {
-  overflow: visible !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper > div > .root-table {
-  grid-template-rows: auto !important;
-  -ms-grid-rows: auto !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper > div > .root-table > span[row="2"] {
+.theme-entry.psf .header span[name="LogoCell"] {
   display: none !important;
 }
 
@@ -381,8 +319,6 @@ body {
   color: #3A4A52;
   font-size: var(--page-title-text-size);
   font-weight: 400;
-  letter-spacing: 0;
-  line-height: 1.12;
   margin: 0;
 }
 
@@ -390,476 +326,8 @@ body {
   color: #6B7A80;
   font-size: var(--page-subtitle-text-size);
   font-weight: 400;
-  line-height: 1.12;
   margin: 0;
   transform: translateY(-22px);
-}
-
-.theme-entry.psf .header .description,
-.theme-entry.psf .header p {
-  color: var(--ntx-deep-navy) !important;
-  font-size: 0.9rem !important;
-  font-weight: 500;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] {
-  grid-template-columns: 1fr 300px !important;
-  overflow: visible !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="1"][row="1"] > div {
-  grid-template-columns: 0 1fr !important;
-  overflow: visible !important;
-  width: 100%;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] .editor-cell {
-  overflow: visible !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="1"][row="1"] > div > span[col="2"][row="1"] > div > span {
-  justify-content: left !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="1"][row="1"] > div > span[col="2"][row="1"] {
-  position: relative !important;
-  top: -28px;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="1"][row="1"] > div > span[col="2"][row="1"] > div {
-  align-content: start !important;
-  overflow: visible !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="2"][row="1"] {
-  position: relative !important;
-  top: -16px;
-  transform: translateX(120px);
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="2"][row="1"] > div {
-  align-content: start !important;
-  justify-items: start !important;
-}
-
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="2"][row="1"] p,
-.theme-entry.psf .header .panel-body-wrapper div[name="tblLargeHeader"] > span[col="2"][row="1"] span.SFC {
-  color: rgba(23, 55, 67, 0.82) !important;
-  font-size: var(--input-label-text-size) !important;
-  font-weight: 500 !important;
-  line-height: 1.35 !important;
-}
-
-.theme-entry.psf .header + .form-tabs {
-  margin-top: 0 !important;
-}
-
-.theme-entry.psf .formpanel > .form > .row:empty {
-  display: none !important;
-}
-
-.theme-entry.psf .formpanel > .form > .row:first-child {
-  margin: 0 !important;
-  min-height: 0 !important;
-}
-
-.theme-entry.psf .panel-header-wrapper,
-.theme-entry.psf .grid-header-wrapper {
-  background: transparent !important;
-  border: 0 !important;
-}
-
-.theme-entry.psf .panel-header-wrapper > div.panel-header-text,
-.theme-entry.psf .grid-header-wrapper > div.grid-header-text {
-  color: var(--view-header-text-color);
-  font-size: var(--view-header-text-size);
-  font-weight: 700;
-  height: 100%;
-}
-
-.theme-entry.psf .view.footer {
-  margin-top: auto !important;
-  padding-top: 28px;
-}
-
-.theme-entry.psf .view.footer.psf-footer-push {
-  margin-top: var(--psf-footer-push, 0px) !important;
-}
-
-.theme-entry.psf .view.footer,
-.theme-entry.psf .view.footer .panel,
-.theme-entry.psf .view.footer .panel-body-wrapper,
-.theme-entry.psf .view.footer .panel-body-m-c {
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
-
-.theme-entry.psf .view.footer .panel-body-wrapper {
-  color: rgba(23, 55, 67, 0.82);
-  font-size: 1rem;
-  padding: 0 10px 20px !important;
-}
-
-.theme-entry.psf .view.footer .SFC.SourceCode-Forms-Controls-Web-Label {
-  color: inherit !important;
-  font-size: inherit !important;
-  font-weight: 500;
-  line-height: 1.35;
-}
-
-.theme-entry.psf .view,
-.theme-entry.psf .grid,
-.theme-entry.psf .panel,
-.theme-entry.psf .view-canvas > .grid,
-.theme-entry.psf .view-canvas > .panel {
-  border-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.theme-entry.psf .panel-body-wrapper,
-.theme-entry.psf .grid-body {
-  background: var(--ntx-white) !important;
-}
-
-.theme-entry.psf .form-tabs > .tab-box-body,
-.theme-entry.psf .form-tabs > .tab-box-body .tab-box-body-m-c,
-.theme-entry.psf .form-tabs > .tab-box-body .tab-box-body-wrapper,
-.theme-entry.psf .formpanel,
-.theme-entry.psf .formpanel > .form,
-.theme-entry.psf .formpanel > .form > .row,
-.theme-entry.psf .formpanel > .form > .row > .view,
-.theme-entry.psf .formpanel > .form > .row > .view > .innerpanel {
-  background: transparent !important;
-}
-
-.theme-entry.psf .formpanel > .form > .row > .view > .innerpanel > .grid,
-.theme-entry.psf .formpanel > .form > .row > .view > .innerpanel > .panel {
-  background: transparent !important;
-}
-
-.theme-entry.psf .formpanel > .form > .row > .view .grid-header,
-.theme-entry.psf .formpanel > .form > .row > .view .grid-header-wrapper,
-.theme-entry.psf .formpanel > .form > .row > .view .toolbars,
-.theme-entry.psf .formpanel > .form > .row > .view .toolbar-wrapper,
-.theme-entry.psf .formpanel > .form > .row > .view .panel-header,
-.theme-entry.psf .formpanel > .form > .row > .view .panel-header-wrapper,
-.theme-entry.psf .formpanel > .form > .row > .view .panel-body-wrapper,
-.theme-entry.psf .formpanel > .form > .row > .view .grid-body {
-  background: transparent !important;
-}
-
-.theme-entry.psf .ControlPack-Worklist,
-.theme-entry.psf .SourceCodeFormsControlsWorklist {
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 20 !important;
-}
-
-.theme-entry.psf .ControlPack-Worklist:hover,
-.theme-entry.psf .ControlPack-Worklist:focus-within,
-.theme-entry.psf .SourceCodeFormsControlsWorklist:hover,
-.theme-entry.psf .SourceCodeFormsControlsWorklist:focus-within {
-  z-index: 21000 !important;
-}
-
-.theme-entry.psf .WorklistItemSectionCell,
-.theme-entry.psf .WorklistItemSectionDiv,
-.theme-entry.psf .WorklistItemGridRow,
-.theme-entry.psf .WorkListItemTable,
-.theme-entry.psf .WorklistTableSelectGridArrow,
-.theme-entry.psf .SelectArrowImageDiv {
-  overflow: visible !important;
-  position: relative !important;
-}
-
-.theme-entry.psf .worklistDisabledOverlay {
-  pointer-events: none !important;
-  z-index: -1 !important;
-}
-
-.theme-entry.psf .WorkListItemTableHeader {
-  position: relative !important;
-  z-index: 1 !important;
-}
-
-.theme-entry.psf .WorkListGridTableBody {
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-.theme-entry.psf.psf-worklist-menu-open .ControlPack-Worklist,
-.theme-entry.psf.psf-worklist-menu-open .SourceCodeFormsControlsWorklist,
-.theme-entry.psf.psf-worklist-menu-open .WorklistItemSectionCell,
-.theme-entry.psf.psf-worklist-menu-open .WorkListGridTableBody,
-.theme-entry.psf.psf-worklist-menu-open .WorkListItemTable,
-.theme-entry.psf.psf-worklist-menu-open .WorklistItemSectionDiv,
-.theme-entry.psf.psf-worklist-menu-open .WorklistItemGridRow {
-  overflow: visible !important;
-  position: relative !important;
-  z-index: 2147483646 !important;
-}
-
-.theme-entry .popupManager,
-.theme-entry .popup,
-.theme-entry .dialog,
-.theme-entry .drop-menu,
-.theme-entry .menu,
-.theme-entry .context-menu,
-.theme-entry [class*="Worklist"][class*="Menu"],
-.theme-entry [class*="Worklist"][class*="menu"],
-.theme-entry [class*="Worklist"][class*="Popup"],
-.theme-entry [class*="Worklist"][class*="popup"],
-.theme-entry [id*="Worklist"][id*="Menu"],
-.theme-entry [id*="Worklist"][id*="Popup"] {
-  z-index: 30000 !important;
-}
-
-.theme-entry .popup,
-.theme-entry .drop-menu,
-.theme-entry .menu,
-.theme-entry .context-menu,
-.theme-entry [class*="Worklist"][class*="Menu"],
-.theme-entry [class*="Worklist"][class*="menu"],
-.theme-entry [class*="Worklist"][class*="Popup"],
-.theme-entry [class*="Worklist"][class*="popup"] {
-  pointer-events: auto !important;
-}
-
-.theme-entry.psf .SFC.SourceCode-Forms-Controls-Web-TextBox.watermark,
-.theme-entry.psf .input-control-watermark {
-  color: rgba(23, 55, 67, 0.36) !important;
-  font-size: var(--main-text-size);
-}
-
-.theme-entry.psf label.SFC.SourceCode-Forms-Controls-Web-Label.input-label,
-.theme-entry.psf input.SFC.SourceCode-Forms-Controls-Web-TextBox.SFE {
-  padding: 0.8rem 1rem !important;
-}
-
-.theme-entry.psf .input-control.text-input:not(.control-group-container) .input-control-m-c {
-  background: transparent !important;
-  border: 0 !important;
-  border-bottom: 1px solid var(--input-border-color) !important;
-  box-shadow: none !important;
-  padding: 0.4rem 0.6rem;
-}
-
-.theme-entry.psf div.picker,
-.theme-entry.psf div.picker div.input-control-m-c,
-.theme-entry.psf div.input-control.lookup-box,
-.theme-entry.psf div.input-control.select-box {
-  min-height: 40px !important;
-}
-
-.theme-entry.psf .input-control.text-input.control-group-container div.input-control-m-c {
-  border: 1px solid var(--input-border-color) !important;
-  box-shadow: none !important;
-}
-
-.theme-entry.psf .calendar-control.datepicker > .styling-outer-wrapper,
-.theme-entry.psf .dropdown-box > .styling-outer-wrapper {
-  border-bottom: 1px solid var(--input-border-color) !important;
-}
-
-.theme-entry.psf .calendar-control.datepicker .input-control-body,
-.theme-entry.psf .calendar-control.datepicker .input-control-buttons,
-.theme-entry.psf .dropdown-box .input-control-body,
-.theme-entry.psf .dropdown-box .input-control-buttons {
-  border-bottom: 0 !important;
-}
-
-.theme-entry.psf .calendar-control.datepicker .input-control-b,
-.theme-entry.psf .calendar-control.datepicker .input-control-b-l,
-.theme-entry.psf .calendar-control.datepicker .input-control-b-c,
-.theme-entry.psf .calendar-control.datepicker .input-control-b-r,
-.theme-entry.psf .dropdown-box .input-control-b,
-.theme-entry.psf .dropdown-box .input-control-b-l,
-.theme-entry.psf .dropdown-box .input-control-b-c,
-.theme-entry.psf .dropdown-box .input-control-b-r {
-  border: 0 !important;
-  height: 0 !important;
-  min-height: 0 !important;
-}
-
-.theme-entry.psf .calendar-control.datepicker > .styling-outer-wrapper > .input-control-buttons,
-.theme-entry.psf .dropdown-box > .styling-outer-wrapper > .input-control-buttons {
-  vertical-align: middle !important;
-}
-
-.theme-entry.psf .calendar-control.datepicker .calender-control-button svg,
-.theme-entry.psf .calendar-control.datepicker .svg-icon-calendar-date {
-  height: 28px !important;
-  width: 28px !important;
-}
-
-.theme-entry.psf .worklistToolbarIconWrapper {
-  align-items: center !important;
-  display: inline-flex !important;
-  gap: 10px;
-}
-
-.theme-entry.psf .worklistToolbarIconWrapper .worklist-btn,
-.theme-entry.psf .WorklistThemeIconContainer {
-  align-items: center !important;
-  display: inline-flex !important;
-  height: 32px !important;
-  justify-content: center !important;
-  min-height: 32px !important;
-  min-width: 32px !important;
-  width: 32px !important;
-}
-
-.theme-entry.psf .worklistToolbarIconWrapper .worklist-btn svg,
-.theme-entry.psf .WorklistThemeIconContainer svg {
-  display: block !important;
-  height: 28px !important;
-  min-height: 28px !important;
-  min-width: 28px !important;
-  width: 28px !important;
-}
-
-.theme-entry.psf .WorklistItemIcons svg {
-  display: block !important;
-  height: 14px !important;
-  width: 14px !important;
-}
-
-.theme-entry.psf .WorklistItemIcons {
-  line-height: 0 !important;
-  text-align: center !important;
-  vertical-align: middle !important;
-}
-
-.theme-entry.psf .WorklistItemIcons .OverdueImageDiv,
-.theme-entry.psf .WorklistItemIcons .PriorityImageDiv {
-  align-items: center !important;
-  display: inline-flex !important;
-  height: 16px !important;
-  justify-content: center !important;
-  position: relative !important;
-  top: 1px !important;
-  vertical-align: middle !important;
-  width: 16px !important;
-}
-
-.theme-entry.psf .WorklistTableSelectGridArrow svg,
-.theme-entry.psf .SelectArrowImageDiv svg {
-  display: block !important;
-  height: 22px !important;
-  width: 22px !important;
-}
-
-.theme-entry.psf .SFC.SourceCode-Forms-Controls-Web-TextBox.readonly,
-.theme-entry.psf input[type="text"].input-control.readonly,
-.theme-entry.psf input[type="password"].input-control.readonly,
-.theme-entry.psf .readonly {
-  background-color: transparent !important;
-  border: 0 !important;
-}
-
-.theme-entry.psf div.search-control .input-control.text-input .input-control-m-c {
-  align-items: center;
-  display: flex;
-}
-
-.theme-entry.psf div.search-control .input-control.text-input .input-control-m-c > .input-control-wrapper {
-  width: calc(100% - 42px);
-}
-
-.theme-entry.psf div.search-control .input-control.text-input .input-control-m-c::after,
-.theme-entry.psf div.kpi div.card .kpi-icon::after,
-.theme-entry.psf .toolbar-button .button-icon::after {
-  font-family: "Material Symbols Outlined";
-  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
-  line-height: 1;
-}
-
-.theme-entry.psf div.search-control .input-control.text-input .input-control-m-c::after {
-  border-left: 1px solid var(--input-border-color);
-  color: var(--ntx-magenta);
-  content: "search";
-  display: grid;
-  font-size: 24px;
-  height: 28px;
-  margin-left: 10px;
-  place-items: center;
-  width: 32px;
-}
-
-.theme-entry.psf .button,
-.theme-entry.psf a.SourceCode-Forms-Controls-Web-Button,
-.theme-entry.psf input[type="button"],
-.theme-entry.psf button {
-  border-radius: 3px !important;
-  font-size: 1rem !important;
-  font-weight: 700 !important;
-}
-
-.theme-entry.psf a.SFC.SourceCode-Forms-Controls-Web-Button,
-.theme-entry.psf a.SourceCode-Forms-Controls-Web-Button:not(.toolbar-button),
-.theme-entry.psf input[type="button"].SourceCode-Forms-Controls-Web-Button,
-.theme-entry.psf input[type="submit"].SourceCode-Forms-Controls-Web-Button {
-  align-items: center !important;
-  background: linear-gradient(90deg, var(--ntx-navy) 0%, #173743 52%, var(--ntx-purple) 100%) !important;
-  border: 0 !important;
-  border-radius: 8px !important;
-  box-shadow: 0 3px 8px rgba(23, 55, 67, 0.13);
-  color: var(--ntx-white) !important;
-  display: inline-flex !important;
-  font-family: var(--button-font-family) !important;
-  font-size: 1.12rem !important;
-  font-weight: 700 !important;
-  justify-content: center !important;
-  line-height: 1.1 !important;
-  min-height: 40px;
-  min-width: 112px;
-  padding: 0.75rem 1.35rem !important;
-  text-decoration: none !important;
-  transition: box-shadow 160ms ease, filter 160ms ease, transform 160ms ease;
-}
-
-.theme-entry.psf a.SFC.SourceCode-Forms-Controls-Web-Button:hover,
-.theme-entry.psf a.SourceCode-Forms-Controls-Web-Button:not(.toolbar-button):hover,
-.theme-entry.psf input[type="button"].SourceCode-Forms-Controls-Web-Button:hover,
-.theme-entry.psf input[type="submit"].SourceCode-Forms-Controls-Web-Button:hover {
-  box-shadow: 0 5px 10px rgba(23, 55, 67, 0.16);
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-}
-
-.theme-entry.psf a.SFC.SourceCode-Forms-Controls-Web-Button:focus,
-.theme-entry.psf a.SourceCode-Forms-Controls-Web-Button:not(.toolbar-button):focus,
-.theme-entry.psf input[type="button"].SourceCode-Forms-Controls-Web-Button:focus,
-.theme-entry.psf input[type="submit"].SourceCode-Forms-Controls-Web-Button:focus {
-  box-shadow: 0 0 0 3px rgba(233, 124, 47, 0.25), 0 8px 18px rgba(23, 55, 67, 0.16);
-  outline: 0 !important;
-}
-
-.theme-entry.psf a.SFC.SourceCode-Forms-Controls-Web-Button.disabled,
-.theme-entry.psf a.SourceCode-Forms-Controls-Web-Button:not(.toolbar-button).disabled,
-.theme-entry.psf input[type="button"].SourceCode-Forms-Controls-Web-Button:disabled,
-.theme-entry.psf input[type="submit"].SourceCode-Forms-Controls-Web-Button:disabled {
-  cursor: default !important;
-  filter: grayscale(0.35);
-  opacity: 0.55;
-}
-
-.theme-entry.psf .toolbar-wrapper {
-  padding-bottom: 1.2rem;
-  padding-top: 0.8rem;
-}
-
-.theme-entry.psf .toolbar-button {
-  border-right: 1px solid var(--ntx-line);
-  margin-left: 1rem !important;
-}
-
-.theme-entry.psf .toolbar-button:last-child {
-  border-right: 0 !important;
 }
 `;
 
@@ -868,5 +336,47 @@ body {
   styleEl.type = "text/css";
   styleEl.textContent = css;
   document.head.appendChild(styleEl);
+
+  // Runtime initialization for K2 form layout
+  function initPSF() {
+    var themeEntry = document.querySelector(".theme-entry") || document.body;
+    themeEntry.classList.add("psf");
+
+    var runtimeContent = document.querySelector(".runtime-content");
+    if (runtimeContent && !runtimeContent.classList.contains("with-sidebar")) {
+      runtimeContent.classList.add("with-sidebar");
+    }
+
+    // Build sidebar if tabs exist and sidebar isn't already created
+    var tabBox = document.querySelector(".form-tabs");
+    var existingSidebar = document.querySelector(".psf-sidebar");
+    if (tabBox && !existingSidebar) {
+      var sidebar = document.createElement("div");
+      sidebar.className = "psf-sidebar";
+
+      var logoDiv = document.createElement("div");
+      logoDiv.className = "psf-sidebar-logo";
+      var logoImg = document.createElement("img");
+      logoImg.src = "https://maxiezzahi.github.io/k2-modern-style/logo.png"; // Fallback or adjust as needed
+      logoImg.alt = "Logo";
+      logoDiv.appendChild(logoImg);
+      sidebar.appendChild(logoDiv);
+
+      var tabsContainer = document.createElement("div");
+      tabsContainer.className = "psf-sidebar-tabs";
+      tabsContainer.appendChild(tabBox);
+      sidebar.appendChild(tabsContainer);
+
+      runtimeContent.insertBefore(sidebar, runtimeContent.firstChild);
+    }
+  }
+
+  if (document.readyState === "complete" || document.readyState === "interactive") {
+    setTimeout(initPSF, 200);
+  } else {
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(initPSF, 200);
+    });
+  }
 
 })(window, document);
