@@ -158,6 +158,8 @@ body {
 .theme-entry.psf .runtime-content.with-sidebar {
   justify-content: start;
   margin-left: var(--ntx-sidebar-width) !important;
+  width: calc(100% - var(--ntx-sidebar-width)) !important;
+  box-sizing: border-box !important;
 }
 
 .theme-entry.psf .psf-sidebar {
