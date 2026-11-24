@@ -1,11 +1,11 @@
 /*!
- * ModernSP  -  Nintex K2 Single-File Style Profile
+ * ModernSP  -  Nintex K2 Single-File Style Profile  (Light / Airy)
  * -----------------------------------------------------------------------------
  * ONE JavaScript file. It injects its own CSS and then rebuilds the SmartForm
  * chrome (left sidebar from the form tabs, compact header, pinned footer,
  * mobile toggle). Reference THIS file from the K2 Style Profile:
  *     Style Profile Designer -> DEVELOPER tab -> Link external file
- *     -> https://raw.githubusercontent.com/<you>/<repo>/main/modernsp-k2-theme.js
+ *     -> https://cdn.jsdelivr.net/gh/<you>/<repo>@main/ModernSP-k2-theme.js
  *
  * REQUIREMENTS IN YOUR FORM (rename in CONFIG below if yours differ):
  *   - Build the form as a TABBED form; each tab becomes a sidebar nav item.
@@ -22,8 +22,10 @@
  *       <div class="msp-tile__label">In progress</div>
  *     </div>
  *   </div>
- * Icon colours: msp-ico--amber | --green | --red | --slate | --maroon
+ * Icon colours: msp-ico--amber | --green | --red | --slate | --violet
  * Material icon names go inside <span class="ms">...</span>.
+ *
+ * PALETTE: change the one accent token (--msp-accent) to rebrand everything.
  * =========================================================================== */
 (function (window, document) {
   "use strict";
@@ -55,16 +57,17 @@
 .theme-entry.msp .runtime-content,
 .theme-entry.msp .view .innerpanel > .grid,
 .theme-entry.msp .view .innerpanel > .panel {
-  --msp-navy:        #12224C;
-  --msp-navy-deep:   #0C1838;
-  --msp-maroon:      #7A1F2B;
-  --msp-maroon-dark: #611821;
+  --msp-accent:      #7C3AED;   /* primary accent (soft Nintex purple)  */
+  --msp-accent-dark: #6D28D9;   /* hover / selected text                */
+  --msp-accent-soft: #F3EDFC;   /* selected tab tint                    */
 
-  --msp-bg:          #F7F8FB;
+  --msp-bg:          #F7F8FB;   /* page background                      */
+  --msp-sidebar:     #FFFFFF;   /* light sidebar                        */
   --msp-card:        #FFFFFF;
-  --msp-border:      #ECECF2;
-  --msp-soft-line:   rgba(18,34,76,0.10);
+  --msp-border:      #E7E8EE;
+  --msp-soft-line:   rgba(20,23,40,0.08);
 
+  --msp-ink:         #2D3344;   /* dark text on the light sidebar       */
   --msp-text:        #1F2430;
   --msp-text-soft:   #8A8F9C;
 
@@ -75,8 +78,8 @@
 
   --msp-radius-card: 16px;
   --msp-radius-ico:  12px;
-  --msp-shadow-sm:   0 2px 8px rgba(18,34,76,0.06);
-  --msp-shadow-md:   0 8px 24px rgba(18,34,76,0.10);
+  --msp-shadow-sm:   0 2px 8px rgba(20,23,40,0.05);
+  --msp-shadow-md:   0 8px 24px rgba(20,23,40,0.08);
 
   --msp-sidebar-w:   288px;
   --msp-font: "Plus Jakarta Sans", "Segoe UI", system-ui, Arial, sans-serif;
@@ -112,16 +115,18 @@ html, body { background: var(--msp-bg) !important; }
   line-height: 1;
 }
 
-/* ---------- left sidebar (built from form tabs) ---------- */
+/* ---------- left sidebar (light, built from form tabs) ---------- */
 .theme-entry.msp .msp-sidebar {
-  background: linear-gradient(180deg, var(--msp-navy-deep) 0%, var(--msp-navy) 60%, #1b2f63 100%);
-  color: #fff;
+  background: var(--msp-sidebar);
+  color: var(--msp-ink);
+  border-right: 1px solid var(--msp-border);
+  box-shadow: 2px 0 14px rgba(20,23,40,0.04);
   position: fixed;
   top: 0; left: 0; bottom: 0;
   width: var(--msp-sidebar-w);
-  padding: 26px 22px 34px;
+  padding: 24px 20px 32px;
   display: grid;
-  grid-template-rows: 128px auto;
+  grid-template-rows: 84px auto;
   z-index: 10000;
   overflow: visible;
 }
@@ -129,47 +134,46 @@ html, body { background: var(--msp-bg) !important; }
   display: flex; align-items: center; justify-content: center;
 }
 .theme-entry.msp .msp-sidebar-logo img {
-  background: #fff;
-  border-radius: 10px;
-  padding: 14px;
-  max-height: 96px;
-  max-width: 150px;
+  background: transparent;
+  max-height: 60px;
+  max-width: 160px;
   display: block !important;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs {
   border: 0 !important;
   margin: 0 !important; padding: 0 !important;
-  display: flex; flex-direction: column; gap: 8px;
+  display: flex; flex-direction: column; gap: 6px;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li {
   display: block !important; margin: 0 !important; width: 100%;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab {
   display: flex; align-items: center;
-  min-height: 52px;
-  padding: 0 18px !important;
+  min-height: 48px;
+  padding: 0 16px !important;
   border: 0 !important;
   border-radius: 10px;
+  overflow: hidden;
   background: transparent !important;
-  color: rgba(255,255,255,0.86) !important;
+  color: #4B5563 !important;
   font-size: 14.5px; font-weight: 600;
   text-decoration: none;
   transition: background 140ms ease, color 140ms ease;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab:hover {
-  background: rgba(255,255,255,0.08) !important;
-  color: #fff !important;
+  background: #F3F4F8 !important;
+  color: var(--msp-ink) !important;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab.selected {
-  background: #fff !important;
-  color: var(--msp-navy) !important;
+  background: var(--msp-accent-soft) !important;
+  color: var(--msp-accent-dark) !important;
   position: relative;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab.selected::before {
   content: "";
   position: absolute; left: 0; top: 0; bottom: 0;
-  width: 4px; border-radius: 4px 0 0 4px;
-  background: var(--msp-maroon);
+  width: 4px;
+  background: var(--msp-accent);
 }
 
 /* mobile hamburger */
@@ -178,7 +182,7 @@ html, body { background: var(--msp-bg) !important; }
   position: fixed; top: 14px; left: 14px;
   width: 46px; height: 46px;
   align-items: center; justify-content: center;
-  background: #fff; color: var(--msp-navy);
+  background: #fff; color: var(--msp-accent-dark);
   border: 1px solid var(--msp-soft-line);
   border-radius: 10px;
   box-shadow: var(--msp-shadow-sm);
@@ -190,7 +194,7 @@ html, body { background: var(--msp-bg) !important; }
 .theme-entry.msp .view.header,
 .theme-entry.msp .view.header * { background: transparent !important; }
 .theme-entry.msp .view.header h1 {
-  color: var(--msp-navy); font-size: 26px; font-weight: 700; margin: 0;
+  color: var(--msp-ink); font-size: 26px; font-weight: 700; margin: 0;
 }
 .theme-entry.msp .view.header h2 {
   color: var(--msp-text-soft); font-size: 15px; font-weight: 500; margin: 2px 0 0;
@@ -233,7 +237,7 @@ html, body { background: var(--msp-bg) !important; }
   min-height: 40px; min-width: 110px;
   padding: 0.7rem 1.3rem !important;
   border: 0 !important; border-radius: 10px !important;
-  background: var(--msp-maroon) !important;
+  background: var(--msp-accent) !important;
   color: #fff !important;
   font-weight: 700 !important; font-size: 14px !important;
   box-shadow: var(--msp-shadow-sm);
@@ -243,14 +247,27 @@ html, body { background: var(--msp-bg) !important; }
 .theme-entry.msp a.SFC.SourceCode-Forms-Controls-Web-Button:not(.toolbar-button):hover,
 .theme-entry.msp input[type="button"].SourceCode-Forms-Controls-Web-Button:hover,
 .theme-entry.msp input[type="submit"].SourceCode-Forms-Controls-Web-Button:hover {
-  background: var(--msp-maroon-dark) !important;
+  background: var(--msp-accent-dark) !important;
   transform: translateY(-1px);
   box-shadow: var(--msp-shadow-md);
+}
+/* secondary buttons: add class "msp-btn-secondary" (or Name it) for an
+   outlined, quieter look so the primary action stands out */
+.theme-entry.msp a.msp-btn-secondary.SourceCode-Forms-Controls-Web-Button,
+.theme-entry.msp input.msp-btn-secondary.SourceCode-Forms-Controls-Web-Button {
+  background: #fff !important;
+  color: var(--msp-accent-dark) !important;
+  border: 1px solid var(--msp-accent) !important;
+  box-shadow: none;
+}
+.theme-entry.msp a.msp-btn-secondary.SourceCode-Forms-Controls-Web-Button:hover,
+.theme-entry.msp input.msp-btn-secondary.SourceCode-Forms-Controls-Web-Button:hover {
+  background: var(--msp-accent-soft) !important;
 }
 
 /* ---------- list / grid ---------- */
 .theme-entry.msp .grid-column-headers {
-  background: #EEF1F6 !important;
+  background: #F1F2F6 !important;
   border-bottom: 1px solid var(--msp-soft-line) !important;
 }
 .theme-entry.msp .grid-body table.grid-content-table { border-collapse: collapse; }
@@ -277,29 +294,29 @@ html, body { background: var(--msp-bg) !important; }
   color: #fff;
 }
 .theme-entry.msp .msp-tile__ico .ms { font-size: 22px; }
-.theme-entry.msp .msp-tile__value { font-size: 26px; font-weight: 800; line-height: 1; color: var(--msp-navy); }
+.theme-entry.msp .msp-tile__value { font-size: 26px; font-weight: 800; line-height: 1; color: var(--msp-ink); }
 .theme-entry.msp .msp-tile__label { font-size: 13px; color: var(--msp-text-soft); margin-top: 3px; }
 .theme-entry.msp .msp-ico--amber  { background: linear-gradient(135deg,#F7B64C,var(--msp-amber)); }
 .theme-entry.msp .msp-ico--green  { background: linear-gradient(135deg,#3FCB8C,var(--msp-green)); }
 .theme-entry.msp .msp-ico--red    { background: linear-gradient(135deg,#EF6A6A,var(--msp-red)); }
 .theme-entry.msp .msp-ico--slate  { background: linear-gradient(135deg,#2D3E6B,var(--msp-slate)); }
-.theme-entry.msp .msp-ico--maroon { background: linear-gradient(135deg,#9A3443,var(--msp-maroon)); }
+.theme-entry.msp .msp-ico--violet { background: linear-gradient(135deg,#A78BFA,var(--msp-accent)); }
 
 /* ---------- helper: hero banner ---------- */
 .theme-entry.msp .msp-hero {
   position: relative; overflow: hidden;
   border-radius: var(--msp-radius-card);
   padding: 26px 30px; color: #fff;
-  background: linear-gradient(120deg, var(--msp-navy-deep) 0%, var(--msp-navy) 55%, #243a7a 100%);
+  background: linear-gradient(120deg, #6D28D9 0%, #7C3AED 55%, #9F67F0 100%);
   box-shadow: var(--msp-shadow-md);
 }
 .theme-entry.msp .msp-hero::after {
   content: ""; position: absolute; top: -40px; right: -10px;
   width: 220px; height: 200%;
-  background: rgba(255,255,255,0.06); transform: rotate(18deg);
+  background: rgba(255,255,255,0.08); transform: rotate(18deg);
 }
 .theme-entry.msp .msp-hero__title { font-size: 22px; font-weight: 800; margin: 0 0 6px; }
-.theme-entry.msp .msp-hero__text  { font-size: 13.5px; opacity: 0.85; max-width: 62ch; }
+.theme-entry.msp .msp-hero__text  { font-size: 13.5px; opacity: 0.9; max-width: 62ch; }
 
 /* ---------- helper: status pills ---------- */
 .theme-entry.msp .msp-pill { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
@@ -319,7 +336,7 @@ html, body { background: var(--msp-bg) !important; }
   .theme-entry.msp.msp-sidebar-open .msp-sidebar { transform: translateX(0); }
   .theme-entry.msp.msp-sidebar-open::after {
     content: ""; position: fixed; inset: 0;
-    background: rgba(18,34,76,0.45); z-index: 9999;
+    background: rgba(20,23,40,0.35); z-index: 9999;
   }
 }
 `;
