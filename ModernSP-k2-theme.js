@@ -120,7 +120,7 @@ html, body { background: var(--msp-bg) !important; }
 
 /* ---------- left sidebar (light, built from form tabs) ---------- */
 .theme-entry.msp .msp-sidebar {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FBF8FE 45%, #F0E8FB 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FD 45%, #EBEEF8 100%);
   color: var(--msp-ink);
   border-right: 1px solid var(--msp-border);
   box-shadow: 2px 0 14px rgba(20,23,40,0.04);
