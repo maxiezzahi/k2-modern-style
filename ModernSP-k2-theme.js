@@ -120,7 +120,7 @@ html, body { background: var(--msp-bg) !important; }
 
 /* ---------- left sidebar (light, built from form tabs) ---------- */
 .theme-entry.msp .msp-sidebar {
-  background: var(--msp-sidebar);
+  background: linear-gradient(180deg, #FFFFFF 0%, #FBF8FE 45%, #F0E8FB 100%);
   color: var(--msp-ink);
   border-right: 1px solid var(--msp-border);
   box-shadow: 2px 0 14px rgba(20,23,40,0.04);
@@ -166,12 +166,13 @@ html, body { background: var(--msp-bg) !important; }
   transition: background 140ms ease, color 140ms ease;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab:hover {
-  background: #F3F4F8 !important;
+  background: rgba(124,58,237,0.07) !important;
   color: var(--msp-ink) !important;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab.selected {
-  background: var(--msp-accent-soft) !important;
+  background: #FFFFFF !important;
   color: var(--msp-accent-dark) !important;
+  box-shadow: 0 2px 10px rgba(124,58,237,0.14);
   position: relative;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab.selected::before {
