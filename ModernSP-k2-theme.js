@@ -36,6 +36,9 @@
     logoCellName:   "LogoCell",    // control/cell holding the logo image
     headerViewName: "Header",      // header view name
     footerViewName: "Footer",      // footer view name (optional)
+    logoUrl:        "https://cdn-public.softwarereviews.com/production/logos/offerings/7968/original/Nintex-logo2-PNG.png?1753460599",
+                                   // ^ logo shown top-left in the sidebar.
+                                   //   Set to "" to fall back to cloning LogoCell.
     buildSidebar:   true           // move form tabs into a left nav rail
   };
 
@@ -131,13 +134,15 @@ html, body { background: var(--msp-bg) !important; }
   overflow: visible;
 }
 .theme-entry.msp .msp-sidebar-logo {
-  display: flex; align-items: center; justify-content: center;
+  display: flex; align-items: center; justify-content: flex-start;
+  padding-left: 4px;
 }
 .theme-entry.msp .msp-sidebar-logo img {
   background: transparent;
-  max-height: 60px;
-  max-width: 160px;
+  max-height: 46px;
+  max-width: 150px;
   display: block !important;
+  object-fit: contain;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs {
   border: 0 !important;
@@ -374,16 +379,19 @@ html, body { background: var(--msp-bg) !important; }
 
     var sidebar = $('<nav class="msp-sidebar" aria-label="Navigation"></nav>');
 
-    // clone the logo, if present
-    var logoSpan = $('span[name="' + CONFIG.logoCellName + '"]').first();
-    var img = logoSpan.find("img").first();
-    if (img.length) {
-      var clone = img.clone(false).removeAttr("id name tabindex data-options");
-      sidebar.append($('<div class="msp-sidebar-logo"></div>').append(clone));
-      logoSpan.css("display", "none");
+    // logo: 1) explicit URL wins; 2) else clone a LogoCell image; 3) else empty
+    var logoBox = $('<div class="msp-sidebar-logo"></div>');
+    if (CONFIG.logoUrl) {
+      logoBox.append($('<img alt="logo">').attr("src", CONFIG.logoUrl));
     } else {
-      sidebar.append($('<div class="msp-sidebar-logo"></div>'));
+      var logoSpan = $('span[name="' + CONFIG.logoCellName + '"]').first();
+      var img = logoSpan.find("img").first();
+      if (img.length) {
+        logoBox.append(img.clone(false).removeAttr("id name tabindex data-options"));
+        logoSpan.css("display", "none");
+      }
     }
+    sidebar.append(logoBox);
 
     // move the real form tabs into the sidebar (keeps K2 tab behaviour)
     sidebar.append(tabs);
