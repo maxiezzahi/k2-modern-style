@@ -207,6 +207,24 @@ html, body { background: var(--msp-bg) !important; }
   background: transparent !important;
 }
 
+/* kill the opaque white wrappers (form + tab containers) so the grey
+   page background shows through and only styled cards stay white */
+.theme-entry.msp #pgInnerPanel,
+.theme-entry.msp #pgTabContent,
+.theme-entry.msp .runtime-form,
+.theme-entry.msp .formpanel,
+.theme-entry.msp .formpanel > .form,
+.theme-entry.msp .formpanel > .form > .row,
+.theme-entry.msp .form-tabs > .tab-box-body,
+.theme-entry.msp .form-tabs > .tab-box-body .tab-box-body-m-c,
+.theme-entry.msp .form-tabs > .tab-box-body .tab-box-body-wrapper,
+.theme-entry.msp .formpanel > .form > .row > .view,
+.theme-entry.msp .formpanel > .form > .row > .view > .innerpanel,
+.theme-entry.msp .formpanel > .form > .row > .view > .innerpanel > .grid,
+.theme-entry.msp .formpanel > .form > .row > .view > .innerpanel > .panel {
+  background: transparent !important;
+}
+
 /* ---------- buttons ---------- */
 .theme-entry.msp a.SFC.SourceCode-Forms-Controls-Web-Button:not(.toolbar-button),
 .theme-entry.msp input[type="button"].SourceCode-Forms-Controls-Web-Button,
