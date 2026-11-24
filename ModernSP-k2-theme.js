@@ -22,7 +22,7 @@
  *       <div class="msp-tile__label">In progress</div>
  *     </div>
  *   </div>
- * Icon colours: msp-ico--amber | --green | --red | --slate | --violet
+ * Icon colours: msp-ico--amber | --green | --red | --slate | --blue
  * Material icon names go inside <span class="ms">...</span>.
  *
  * PALETTE: change the one accent token (--msp-accent) to rebrand everything.
@@ -60,9 +60,9 @@
 .theme-entry.msp .runtime-content,
 .theme-entry.msp .view .innerpanel > .grid,
 .theme-entry.msp .view .innerpanel > .panel {
-  --msp-accent:      #7C3AED;   /* primary accent (soft Nintex purple)  */
-  --msp-accent-dark: #6D28D9;   /* hover / selected text                */
-  --msp-accent-soft: #F3EDFC;   /* selected tab tint                    */
+  --msp-accent:      #2F6FED;   /* primary accent (soft blue) - change this one to rebrand */
+  --msp-accent-dark: #2457C4;   /* hover / selected text                */
+  --msp-accent-soft: #EAF1FE;   /* soft accent tint                     */
 
   --msp-bg:          #F7F8FB;   /* page background                      */
   --msp-sidebar:     #FFFFFF;   /* light sidebar                        */
@@ -120,7 +120,7 @@ html, body { background: var(--msp-bg) !important; }
 
 /* ---------- left sidebar (light, built from form tabs) ---------- */
 .theme-entry.msp .msp-sidebar {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FD 45%, #EBEEF8 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, #F6F9FE 45%, #E6EFFB 100%);
   color: var(--msp-ink);
   border-right: 1px solid var(--msp-border);
   box-shadow: 2px 0 14px rgba(20,23,40,0.04);
@@ -166,13 +166,13 @@ html, body { background: var(--msp-bg) !important; }
   transition: background 140ms ease, color 140ms ease;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab:hover {
-  background: rgba(124,58,237,0.07) !important;
+  background: rgba(47,111,237,0.08) !important;
   color: var(--msp-ink) !important;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab.selected {
   background: #FFFFFF !important;
   color: var(--msp-accent-dark) !important;
-  box-shadow: 0 2px 10px rgba(124,58,237,0.14);
+  box-shadow: 0 2px 10px rgba(47,111,237,0.16);
   position: relative;
 }
 .theme-entry.msp .msp-sidebar .tab-box-tabs > li > a.tab.selected::before {
@@ -306,14 +306,14 @@ html, body { background: var(--msp-bg) !important; }
 .theme-entry.msp .msp-ico--green  { background: linear-gradient(135deg,#3FCB8C,var(--msp-green)); }
 .theme-entry.msp .msp-ico--red    { background: linear-gradient(135deg,#EF6A6A,var(--msp-red)); }
 .theme-entry.msp .msp-ico--slate  { background: linear-gradient(135deg,#2D3E6B,var(--msp-slate)); }
-.theme-entry.msp .msp-ico--violet { background: linear-gradient(135deg,#A78BFA,var(--msp-accent)); }
+.theme-entry.msp .msp-ico--blue   { background: linear-gradient(135deg,#93B4FA,var(--msp-accent)); }
 
 /* ---------- helper: hero banner ---------- */
 .theme-entry.msp .msp-hero {
   position: relative; overflow: hidden;
   border-radius: var(--msp-radius-card);
   padding: 26px 30px; color: #fff;
-  background: linear-gradient(120deg, #6D28D9 0%, #7C3AED 55%, #9F67F0 100%);
+  background: linear-gradient(120deg, #2457C4 0%, #2F6FED 55%, #5B93F5 100%);
   box-shadow: var(--msp-shadow-md);
 }
 .theme-entry.msp .msp-hero::after {
